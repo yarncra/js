@@ -92,3 +92,36 @@ console.log("is empty? --->", isEmpty(schedule)); // true
 schedule["8:30"] = "get up";
 
 console.log("is empty? --->", isEmpty(schedule)); // false
+
+// Копирование объектов и ссылки
+
+const objClone1 = {
+  name: "clone1",
+  age: 100
+};
+
+const objClone2 = new Object();
+for (let key in objClone1) {
+  objClone2[key] = objClone1[key];
+}
+
+console.log(objClone1);
+console.log(objClone2);
+
+console.log(objClone1 === objClone2);
+
+let userClone = { name: "Иван" };
+
+let permissions1Clone = { canView: true };
+let permissions2Colone = { canEdit: true };
+
+Object.assign(userClone, permissions1Clone, permissions2Colone);
+
+console.log(userClone);
+
+const newCLone = {
+  name: "newClone"
+};
+
+const newClone2 = Object.assign({}, newCLone);
+console.log(newClone2);
